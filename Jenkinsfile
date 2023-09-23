@@ -17,13 +17,10 @@ pipeline {
         }
 
         stage('Build 2') {
+          agent any
           steps {
             echo 'Build 2 message'
             echo 'Build 2 - message 2'
-            waitUntil(quiet: true, initialRecurrencePeriod: 2) {
-              sh 'uptime'
-            }
-
           }
         }
 
